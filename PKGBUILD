@@ -14,7 +14,7 @@ depends=("python"
          "${MINGW_PACKAGE_PREFIX}-zlib")
 makedepends=("git"
              "python"
-             "pkg-config"
+             "${MINGW_PACKAGE_PREFIX}-pkg-config"
 	     "${MINGW_PACKAGE_PREFIX}-bc"
 	     "${MINGW_PACKAGE_PREFIX}-cmake"
 	     "${MINGW_PACKAGE_PREFIX}-diffutils"
