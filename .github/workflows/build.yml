@@ -8,7 +8,9 @@ jobs:
     runs-on: windows-latest
     env:
       MINGW_PACKAGE_PREFIX: mingw-w64-ucrt-x86_64
-
+    defaults:
+      run:
+        shell: msys2 {0}
     steps:
     - uses: actions/checkout@v2
     
@@ -33,6 +35,5 @@ jobs:
           ${{env.MINGW_PACKAGE_PREFIX}}-zlib
 
     - name: Run makepkg
-      run: |
-        ./run.sh d7568e70115375a35947c024623822abb0ec8953 mrtrix3
+      run: ./run.sh d7568e70115375a35947c024623822abb0ec8953 mrtrix3
 
