@@ -1,0 +1,18 @@
+# A Github Workflow file that builds the project
+
+name: Build
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      MINGW_PACKAGE_PREFIX: mingw-w64-ucrt-x86_64
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Run makepkg
+      run: |
+        ./run.sh d7568e70115375a35947c024623822abb0ec8953 mrtrix3
+
