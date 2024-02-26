@@ -41,7 +41,7 @@ pkgver() {
 
 build() {
   cd "${_realname}"
-  cmake -B build -G Ninja
+  cmake -B build -G Ninja -DMRTRIX_USE_QT6=ON
   cmake --build build
   cmake --install build --prefix=./install
 }
