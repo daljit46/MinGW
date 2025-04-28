@@ -31,7 +31,8 @@ sha512sums=('SKIP')
 
 pkgver() {
   cd "${_realname}"
-  git describe --abbrev=8 | tr '-' '_'
+  git fetch --tags
+  git describe --tags --abbrev=8 | tr '-' '_'
 }
 
 build() {
